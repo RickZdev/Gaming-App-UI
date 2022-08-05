@@ -1,20 +1,18 @@
 import React from 'react'
-import { StyleSheet } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { HeartIcon } from "react-native-heroicons/solid";
 import { DuplicateIcon, GlobeAltIcon } from "react-native-heroicons/outline";
 
+import { BrowseStack, DiscoverStack } from './AppStack'
 import COLORS from '../global/COLORS'
-import HomeStack from './HomeStack';
-import DiscoverStack from './DiscoverStack';
-import BrowseStack from './BrowseStack';
+import HomeScreen from '../screens/HomeScreen';
 
 const Tab = createBottomTabNavigator();
 
 const BottomTab = () => {
   return (
     <Tab.Navigator
-      initialRouteName={HomeStack}
+      initialRouteName={HomeScreen}
       screenOptions={{
         tabBarStyle: {
           backgroundColor: '#000000',
@@ -34,7 +32,7 @@ const BottomTab = () => {
         tabBarHideOnKeyboard: true,
       }}
     >
-      <Tab.Screen name="HomeTab" component={HomeStack}
+      <Tab.Screen name="HomeTab" component={HomeScreen}
         options={{
           tabBarIcon: ({ color, size }) => (
             <HeartIcon color={color} size={size} />
@@ -63,6 +61,3 @@ const BottomTab = () => {
 }
 
 export default BottomTab
-
-const styles = StyleSheet.create({})
-

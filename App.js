@@ -1,20 +1,15 @@
 import 'react-native-gesture-handler'
 import React from 'react';
-
 import { TailwindProvider } from "tailwindcss-react-native";
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from './src/screens/HomeScreen';
-import BottomTab from './src/navigations/BottomTab';
-import MenuDrawer from './src/navigations/MenuDrawer';
 
-const Stack = createNativeStackNavigator();
+import { HomeStack } from './src/navigations/AppStack';
 
 const App = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={{ colors: { background: 'black' } }}>
       <TailwindProvider>
-        <MenuDrawer />
+        <HomeStack />
       </TailwindProvider>
     </NavigationContainer>
   );
